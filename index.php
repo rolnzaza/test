@@ -1,8 +1,7 @@
-<?php include("assets/connect.php");?>
 <?php
-if(isset($_POST['login'])){
-	$sql="select * from login where 
-	login_user = '$_POST[user]' and login_pass = '$_POST[pass]'";
+include("assets/connect.php");
+if(isset($_POST['login'])){  //
+	$sql="select * from login where login_user = '$_POST[user]' and login_pass = '$_POST[pass]'";
 	$result = mysqli_query($con,$sql)or die(mysqli_error($con));
 	$row = mysqli_fetch_array($result);
 	//print_r($row);
